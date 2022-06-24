@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var isPossible = function(target) {
-    while(true){
         let total = 0
         let max = target.sort((a,b)=>b-a)[0]
         let index = target.indexOf(max)
@@ -18,5 +17,5 @@ var isPossible = function(target) {
         max = max%total
         if(max < 1) return false
         target[index]=max;
-    }
+        return isPossible(target)
 };
